@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://thymeaLeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="..static/css/body.css" th:href="@{css/body.css}">
+    <link rel="stylesheet" href="..static/css/form.css" th:href="@{css/form.css}">
+
+</head>
+
+<body>
+<div class="login-page">
+    <div class="form">
+        <form  class="register-form" method="post" action="#" th:action="@{/create}" th:object="${person}">
+            <input th:field = *{name} type="text" placeholder="Name" />
+            <input th:field = *{surname} type="text" placeholder="Surname" />
+            <input th:field = *{password} type="password" placeholder="Password" />
+            <input th:field = *{email} type="text" placeholder="Email address" />
+            <button>create</button>
+            <p class="message">Already registered? <a href="/index" th:href="@{/index}">Sign In</a></p>
+        </form>
+    </div>
+</div>
+</body>
+
+</html>
