@@ -37,11 +37,9 @@ public class Person {
     private List<String> profession;
     @ElementCollection
     private List<String> illness;
-    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH}, fetch=FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
     @JoinColumn(name = "childId", foreignKey = @ForeignKey(name = "childId"))
     private List<Child> childrenList;
-//    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH}, fetch=FetchType.LAZY)
-//    @JoinColumn(name = "relativeId", foreignKey = @ForeignKey(name = "relativeId"))
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "person_relative", joinColumns = {@JoinColumn(name="person_id", referencedColumnName = "ID")},
             inverseJoinColumns = {@JoinColumn(name="relative_id", referencedColumnName = "ID")})
@@ -52,6 +50,11 @@ public class Person {
         this.password = password;
         this.email = email;
     }
+
+
+
+    //    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH}, fetch=FetchType.LAZY)
+//    @JoinColumn(name = "relativeId", foreignKey = @ForeignKey(name = "relativeId"))
 
 
 }

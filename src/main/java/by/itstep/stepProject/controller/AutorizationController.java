@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
 public class AutorizationController {
@@ -25,13 +26,6 @@ public class AutorizationController {
         return "/afterRegistration";
     }
 
-//    @PostMapping("/create")
-//    private String create (@RequestParam String name, @RequestParam String surname, @RequestParam String password,
-//                           @RequestParam String email, Model model){
-//        Person person = new Person(name, surname, password, email);
-//        personService.savePerson(person);
-//        return "afterRegistration";
-//    }
 
     @GetMapping("/index")
     public String showAutorizationView() {
