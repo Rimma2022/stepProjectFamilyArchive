@@ -6,7 +6,9 @@ body {
     margin: 0%;
     padding: 0%;
     height: 100vh;
+    background-image: url("../Children.jpg"), url(../Children.jpg);
+    background-repeat: repeat-x;
     background-position: bottom left, top left;
-    background-color: rgb(188, 220, 239);
+    background-color: peachpuff;
     /* rgb(188, 220, 239); peachpuff */
 }

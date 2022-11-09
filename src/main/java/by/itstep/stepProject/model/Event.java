@@ -21,7 +21,5 @@ public class Event {
     private LocalDate date;
     @Column(name = "descriptionOfEvent")
     private String descriptionOfEvent; // прививался там_то тем-то/ пошел в 10 месяцев/ болел так-то столько-то дней
-    @Enumerated(EnumType.STRING)
-    private TypeEvent typeEvent;
 
 }

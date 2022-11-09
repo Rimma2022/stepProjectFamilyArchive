@@ -1,12 +1,28 @@
 package by.itstep.stepProject.model;
 
 
-import javax.persistence.*;
+import lombok.*;
 
+import javax.persistence.*;
+import java.util.List;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
-public class Child extends Person{
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "childId", foreignKey = @ForeignKey(name = "childId"))
-    private Person person;
+public class Child {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+    @OneToMany
+    private List<Illness> illnesses;
+    @OneToMany
+    private List<Event> eventsList;
+    @OneToMany
+    private List<User> relativeList;
+    @OneToOne
+    private User details;//?????
 
 }

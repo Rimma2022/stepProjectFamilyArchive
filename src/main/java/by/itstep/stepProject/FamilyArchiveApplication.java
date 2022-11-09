@@ -9,5 +9,4 @@ public class FamilyArchiveApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(FamilyArchiveApplication.class, args);
 	}
-
 }
