@@ -12,7 +12,6 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 public class Child {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
@@ -21,8 +20,9 @@ public class Child {
     @OneToMany
     private List<Event> eventsList;
     @OneToMany
-    private List<User> relativeList;
+    private List<Person> relativeList;
     @OneToOne
-    private User details;//?????
+    private Person details;//?????
+
 
 }

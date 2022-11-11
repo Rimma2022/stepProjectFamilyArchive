@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @ToString
 @Entity
-public class User {
+public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
@@ -27,8 +27,8 @@ public class User {
     private LocalDate dateDied;
     @Column(name = "whoIsThis")
     private String whoIsThis;//todo to enum
-//    @Column(name = "education")
+    //    @Column(name = "education")
 //    private String education;
     @OneToOne
-    private UserDetails details;
+    private PersonInfo details;
 }
