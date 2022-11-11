@@ -3,8 +3,6 @@ package by.itstep.stepProject.security;
 import by.itstep.stepProject.model.Person;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Repository;
-
 import java.util.Collection;
 
 public class PersonDetails implements UserDetails {

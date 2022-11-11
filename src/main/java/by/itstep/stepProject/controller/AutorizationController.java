@@ -31,13 +31,13 @@ public class AutorizationController {
 //        return "index";
 //    }
 
-    @GetMapping("/showUserInfo")
-    public String showUserInfo() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        PersonDetails personDetails = (PersonDetails) authentication.getPrincipal();
-        System.out.println(personDetails.getPerson());
-        return "index";
-    }
+//    @GetMapping("/showUserInfo")
+//    public String showUserInfo() {
+//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//        PersonDetails personDetails = (PersonDetails) authentication.getPrincipal();
+//        System.out.println(personDetails.getPerson());
+//        return "index";
+//    }
 //
 //    @GetMapping("/after")
 //    public String showDatailsView() {

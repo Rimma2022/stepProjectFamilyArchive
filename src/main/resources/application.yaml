@@ -1,6 +1,6 @@
 spring:
   jpa:
-    hibernate.ddl-auto: create
+    hibernate.ddl-auto: update
     show-sql: true
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/step_project
