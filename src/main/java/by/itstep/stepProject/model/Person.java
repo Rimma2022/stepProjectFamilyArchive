@@ -29,6 +29,7 @@ public class Person {
     @Column(name = "password")
     private String password;
     @Column(name = "email")
+    @NotEmpty(message = "email не должен быть пустым")
     private String email;
     @Column(name = "dateBirth")
     private LocalDate dateBirth;

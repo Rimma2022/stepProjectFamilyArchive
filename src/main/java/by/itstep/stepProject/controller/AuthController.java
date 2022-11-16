@@ -39,7 +39,7 @@ public class AuthController {
         System.out.println(person);
         personValidator.validate(person, bindingResult);
         if(bindingResult.hasErrors()){
-            return "/registration";
+            return "registration";
         }
         registrationService.register(person);
         return "redirect:/index";

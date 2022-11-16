@@ -6,6 +6,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -28,20 +29,23 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin().loginPage("/index")
                 .loginProcessingUrl("/process_login")
                 .defaultSuccessUrl("/menu", true) // перенаправляем при полож аутентиф
-                .failureUrl("/index?error")  // перенаправляем при отриц аутентиф
+                .failureUrl("/index?error") // перенаправляем при отриц аутентиф
                 .and()
-                .logout()
-                .permitAll();
+                //удалит session and cookies
+                .logout().logoutUrl("/logout").logoutSuccessUrl("/index");
+
+
 
     }
 
     // натсраивает аутентификацию
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(personDetailsService);
+        auth.userDetailsService(personDetailsService)
+                .passwordEncoder(getPasswordEncoder());
     }
 
     @Bean
     public PasswordEncoder getPasswordEncoder(){
-        return NoOpPasswordEncoder.getInstance();
+        return new BCryptPasswordEncoder();
     }
 }
