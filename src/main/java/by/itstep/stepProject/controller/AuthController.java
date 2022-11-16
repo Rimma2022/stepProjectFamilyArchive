@@ -1,10 +1,10 @@
 package by.itstep.stepProject.controller;
 
+import by.itstep.stepProject.bean.PersonDto;
 import by.itstep.stepProject.model.Person;
 import by.itstep.stepProject.service.RegistrationService;
 import by.itstep.stepProject.util.PersonValidator;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -26,19 +26,14 @@ public class AuthController {
         return "index";
     }
 
-    @GetMapping("/menu")
-    public String showMenu() {
-        return "menu";
-    }
-
 
     @GetMapping("/registration")
-    public String registrationPage(@ModelAttribute("person")Person person){
+    public String registrationPage(@ModelAttribute("person") Person person){
         return "registrationForm";
     }
 
 
-    @PostMapping("/create")
+    @PostMapping("/registration")
     private String performRegistration(@ModelAttribute("person")@Valid Person person,
                                        BindingResult bindingResult){
         System.out.println(person);
@@ -48,5 +43,10 @@ public class AuthController {
         }
         registrationService.register(person);
         return "redirect:/index";
+    }
+
+    @GetMapping("/menu")
+    public String showMenu() {
+        return "menu";
     }
 }
