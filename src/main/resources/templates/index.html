@@ -17,6 +17,7 @@
 <div class="login-page">
     <div class="form">
         <form class="login-form" method="post" action="/process_login">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
             <input type="text" name="username" placeholder="Email" />
             <input type="password" name="password" placeholder="Password" >
             <button>login</button>

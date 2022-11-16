@@ -21,8 +21,10 @@
             <button id="lastButton" type="submit" th:formaction="@{/index}">Сообщения</button>
         </form>
     </div>
-    <a href="/logout">Выход</a>
 </div>
+<form th:action="@{/logout}" th:method="post">
+    <input type="submit" value="Выход"/>
+</form>
 
 
 
