@@ -25,7 +25,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                .csrf().disable()// отключаем защиту от межсайтовой подделки запросов
                 .authorizeRequests()
                 .antMatchers("/index","/error", "/registration", "/css/**").permitAll() // пускаем пользователя на эту страницу - авториз
-                .anyRequest().authenticated() // не пускаем не аунтентифицированного пользователя на другие страницы - авториз
+//                .anyRequest().authenticated() // не пускаем не аунтентифицированного пользователя на другие страницы - авториз
+                .anyRequest().hasAnyRole("USER")
                 .and() // далее настраивается страница index
                 .formLogin().loginPage("/index")
                 .loginProcessingUrl("/process_login")

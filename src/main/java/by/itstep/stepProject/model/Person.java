@@ -35,6 +35,8 @@ public class Person {
     private LocalDate dateBirth;
     @Column(name = "dateDied")
     private LocalDate dateDied;
+    @Column(name = "role")
+    private String role;
     @Column(name = "relativeRole")
     private String relativeRole;//todo to enum
     //    @Column(name = "education")

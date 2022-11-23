@@ -2,8 +2,10 @@ package by.itstep.stepProject.security;
 
 import by.itstep.stepProject.model.Person;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
+import java.util.Collections;
 
 public class PersonDetails implements UserDetails {
     private final Person person;
@@ -14,7 +16,7 @@ public class PersonDetails implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() { // список прав
-        return null;
+        return Collections.singletonList(new SimpleGrantedAuthority(person.getRole()));
     }
 
     @Override
