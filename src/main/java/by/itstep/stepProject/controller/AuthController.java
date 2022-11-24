@@ -34,12 +34,12 @@ public class AuthController {
 
 
     @PostMapping("/registration")
-    private String performRegistration(@ModelAttribute("person")@Valid Person person,
+    private String performRegistration(@ModelAttribute("person") @Valid Person person,
                                        BindingResult bindingResult){
         System.out.println(person);
         personValidator.validate(person, bindingResult);
         if(bindingResult.hasErrors()){
-            return "registration";
+            return "redirect:/registration";
         }
         registrationService.register(person);
         return "redirect:/index";

@@ -15,7 +15,7 @@
 <h1>Family Archive</h1>
 <div class="login-page">
     <div class="form">
-        <form  class="register-form" th:method="post"  th:action="@{/registration}" th:object="${person}">
+        <form  class="register-form" th:method="post"  action="/process_login" th:object="${person}">
             <input th:field = *{name} type="text"  placeholder="Name" id="name" />
             <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"> Username Error
             </div>
