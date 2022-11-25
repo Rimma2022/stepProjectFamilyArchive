@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://thymeaLeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="..static/css/body.css" th:href="@{css/body.css}">
+    <link rel="stylesheet" href="..static/css/form.css" th:href="@{css/form.css}">
+</head>
+<body>
+<div class="login-page">
+    <div class="form">
+        <form  class="register-form" th:method="post"  th:action="@{/createC}" th:object="${child}">
+<!--                        <input th:field = *{gender} type="radio"  value="Мальчик"/>-->
+<!--                        <input th:field = *{gender} type="radio"  value="Девочка"/>-->
+            <input th:field = "*{gender}" type="text"  placeholder="Name"/>
+            <!--            <input th:field = *{details.middleName} type="text"  placeholder="MiddleName" />-->
+<!--            <input th:field = *{details.surname} type="text"  placeholder="Surname" id="surname"/>-->
+
+            <input th:field = "*{details.dateBirth}" type="date"  placeholder="dateBirth" />
+            <!--            <input th:field = *{details.email} type="text"  placeholder="Email address" />-->
+            <button type="submit">create</button>
+            <p class="message">Уже создан профиль ребенка? <a href="/formAfterRegistration" th:href="@{/formAfterRegistration}">Назад</a></p>
+        </form>
+    </div>
+</div>
+</body>
+</html>
+
+

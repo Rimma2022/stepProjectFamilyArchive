@@ -1,5 +1,6 @@
 package by.itstep.stepProject.controller;
 
+import by.itstep.stepProject.bean.ChildDto;
 import by.itstep.stepProject.bean.PersonDto;
 import by.itstep.stepProject.model.Person;
 import by.itstep.stepProject.service.RegistrationService;
@@ -39,14 +40,16 @@ public class AuthController {
         System.out.println(person);
         personValidator.validate(person, bindingResult);
         if(bindingResult.hasErrors()){
-            return "redirect:/registration";
+            return "registrationForm";
         }
         registrationService.register(person);
         return "redirect:/index";
     }
-
-    @GetMapping("/menu")
-    public String showMenu() {
-        return "menu";
+    @GetMapping("/afterLogIn")
+    public String showChild() {
+        return "afterLogIn";
     }
+
+
+
 }

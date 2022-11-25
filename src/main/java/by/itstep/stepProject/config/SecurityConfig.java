@@ -30,7 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and() // далее настраивается страница index
                 .formLogin().loginPage("/index")
                 .loginProcessingUrl("/process_login")
-                .defaultSuccessUrl("/menu", true) // перенаправляем при полож аутентиф
+                .defaultSuccessUrl("/afterLogIn", true) // перенаправляем при полож аутентиф
                 .failureUrl("/index?error") // перенаправляем при отриц аутентиф
                 .and()
                 //удалит session and cookies

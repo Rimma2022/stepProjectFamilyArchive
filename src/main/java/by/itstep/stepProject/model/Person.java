@@ -3,7 +3,9 @@ package by.itstep.stepProject.model;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 import java.time.LocalDate;
 
 @Getter
@@ -17,17 +19,19 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Integer id;
-    @NotEmpty (message = "имя не должно быть пустым")
+    @NotEmpty (message = "Не указано имя")
     @Column(name = "name")
     private String name;
     @Column(name = "middleName")
     private String middleName;
+    @NotEmpty (message = "Не указана фамилия")
     @Column(name = "surname")
     private String surname;
 //    @Column(name = "fullName")
 //    private String fullName;
     @Column(name = "password")
     private String password;
+    @Email (message = "Неверно указан email")
     @Column(name = "email")
     @NotEmpty(message = "email не должен быть пустым")
     private String email;

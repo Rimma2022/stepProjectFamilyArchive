@@ -23,6 +23,5 @@ public class Child {
     private List<Person> relativeList;
     @OneToOne
     private Person details;//?????
-
-
+    private String gender;
 }
