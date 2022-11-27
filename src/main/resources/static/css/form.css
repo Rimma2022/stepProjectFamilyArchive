@@ -28,6 +28,29 @@
     font-size: 14px;
     border-radius: 5px;
 }
+.form select {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+#bday, .form label{
+    width: auto;
+    /*float: right;*/
+
+   }
+/*.form label {*/
+/*    width: auto;*/
+/*    float: left;*/
+/*    vertical-align: middle;*/
+/*}*/
+
+
 
 .form button {
     /* font-family: "Roboto", sans-serif; */
