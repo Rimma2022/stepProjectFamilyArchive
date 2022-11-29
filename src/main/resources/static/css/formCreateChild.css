@@ -70,3 +70,6 @@ h1{
     text-align: center;
 
 }
+#bday, .form label{
+    width: 66%;
+}

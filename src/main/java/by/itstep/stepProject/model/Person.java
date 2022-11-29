@@ -1,11 +1,11 @@
 package by.itstep.stepProject.model;
 
 import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
 import java.time.LocalDate;
 
 @Getter
@@ -36,6 +36,7 @@ public class Person {
     @NotEmpty(message = "email не должен быть пустым")
     private String email;
     @Column(name = "dateBirth")
+    @DateTimeFormat(pattern = "dd.mm.yyyy")
     private LocalDate dateBirth;
     @Column(name = "dateDied")
     private LocalDate dateDied;
@@ -46,7 +47,7 @@ public class Person {
     //    @Column(name = "education")
 //    private String education;
     @OneToOne
-    private PersonInfo details;
+    private PersonInfo detail;
 
 
 }

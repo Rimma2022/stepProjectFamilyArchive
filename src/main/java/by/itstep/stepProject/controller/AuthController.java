@@ -35,9 +35,9 @@ public class AuthController {
 
 
     @PostMapping("/registration")
-    private String performRegistration(@ModelAttribute("person") @Valid Person person,
+    private String performRegistration(@ModelAttribute("person") @Valid PersonDto personDto,
                                        BindingResult bindingResult){
-        System.out.println(person);
+        Person person = convertToPerson(personDto);
         personValidator.validate(person, bindingResult);
         if(bindingResult.hasErrors()){
             return "registrationForm";
@@ -45,6 +45,16 @@ public class AuthController {
         registrationService.register(person);
         return "redirect:/index";
     }
+
+    private Person convertToPerson(PersonDto personDto) {
+        Person person = new Person();
+        person.setName(personDto.getName());
+        person.setEmail(personDto.getEmail());
+        person.setSurname(personDto.getSurname());
+        person.setPassword(personDto.getPassword());
+        return person;
+    }
+
     @GetMapping("/afterLogIn")
     public String showChild() {
         return "afterLogIn";

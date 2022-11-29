@@ -9,15 +9,10 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class PersonDto {
-    private Integer id;
+public class Testttt {
     private String name;
     private String middleName;
     private String surname;
-    private String password;
     private String email;
-    private LocalDate dateBirth;
-    private LocalDate dateDied;
-    private String relativeRole;
-    private PersonInfoDto details;
+    private String dateBirth;
 }

@@ -1,15 +1,14 @@
 package by.itstep.stepProject.bean;
 
-import by.itstep.stepProject.model.Event;
-import by.itstep.stepProject.model.Illness;
-import by.itstep.stepProject.model.Person;
+
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -17,16 +16,14 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class ChildDto {
-    private Integer id;
-//    private String name;
-//    private String middleName;
-//    private String surname;
-//    private String email;
-//    private LocalDate dateBirth;
+    private String name;
+    private String middleName;
+    private String surname;
+    private String email;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private LocalDate dateBirth;
     private String gender;
-    private List<Illness> illnesses;
-    private List<Event> eventsList;
-    private List<Person> relativeList;
-    private Person details;
+    private Integer mainParentId;
 }
