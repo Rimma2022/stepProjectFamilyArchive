@@ -8,6 +8,7 @@ import java.time.LocalDate;
 
 public class ChildMapper {
     public static Child childDtoToChild(ChildDto dto, Person person){
+
         return Child.builder()
 //                .dateBirth(LocalDate.of(Integer.decode(split[0]), split[1], split[0])) //todo convert
                 .email(dto.getEmail())
@@ -16,7 +17,9 @@ public class ChildMapper {
                 .surname(dto.getSurname())
                 .middleName(dto.getMiddleName())
                 .gender(dto.getGender())
-                .dateBirth(dto.getDateBirth())
+                .dateBirth(LocalDate.parse(dto.getDateBirth()))
                 .build();
     }
 }
+
+

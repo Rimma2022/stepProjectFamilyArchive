@@ -23,7 +23,7 @@ public class ChildDto {
     private String surname;
     private String email;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-    private LocalDate dateBirth;
+    private String dateBirth;
     private String gender;
     private Integer mainParentId;
 }
