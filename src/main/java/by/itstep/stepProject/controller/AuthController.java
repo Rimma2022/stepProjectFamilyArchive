@@ -55,10 +55,6 @@ public class AuthController {
         return person;
     }
 
-    @GetMapping("/afterLogIn")
-    public String showChild() {
-        return "afterLogIn";
-    }
 
 
 
