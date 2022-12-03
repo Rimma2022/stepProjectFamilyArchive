@@ -1,5 +1,6 @@
 package by.itstep.stepProject.bean;
 
+import by.itstep.stepProject.model.PersonInfo;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -20,5 +21,6 @@ public class PersonDto {
     private LocalDate dateBirth;
     private LocalDate dateDied;
     private String relativeRole;
-    private PersonInfoDto details;
+    private PersonInfo details;
+    private String role;
 }

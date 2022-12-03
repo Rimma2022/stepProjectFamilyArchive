@@ -10,6 +10,8 @@ public class PersonMapper {
                 .name(dto.getName())
                 .surname(dto.getSurname())
                 .password(dto.getPassword())
+                .details(dto.getDetails())
+                .role(dto.getRole())
                 .build();
     }
 }

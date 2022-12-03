@@ -11,21 +11,21 @@ import java.util.Optional;
 @Service
 public class PersonServiceImpl implements PersonService {
     @Autowired
-    private PersonRepository personeRepository;
+    private PersonRepository personRepository;
 
     @Override
     public Optional<Person> findById(Integer mainParentId) {
-        return personeRepository.findById(mainParentId);
+        return personRepository.findById(mainParentId);
     }
 
     @Override
     public Person savePerson(Person person) {
-        return personeRepository.save(person);
+        return personRepository.save(person);
     }
 
     @Override
     public Person getPerson(Integer id) {
-        return personeRepository.findById(id)
+        return personRepository.findById(id)
                 .orElse(null);
     }
 

@@ -1,5 +1,6 @@
 package by.itstep.stepProject.service;
 
+import by.itstep.stepProject.bean.PersonDto;
 import by.itstep.stepProject.model.Person;
 import by.itstep.stepProject.model.PersonInfo;
 

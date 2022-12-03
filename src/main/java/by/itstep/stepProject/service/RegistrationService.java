@@ -1,5 +1,7 @@
 package by.itstep.stepProject.service;
 
+import by.itstep.stepProject.bean.PersonDto;
+import by.itstep.stepProject.mapper.PersonMapper;
 import by.itstep.stepProject.model.Person;
 import by.itstep.stepProject.model.PersonInfo;
 import by.itstep.stepProject.repository.PeopleRepository;
@@ -22,16 +24,16 @@ public class RegistrationService {
 
 
     @Transactional
-    public void register(Person person){
-        String encodedPassword = passwordEncoder.encode(person.getPassword());
-        person.setPassword(encodedPassword);
-        person.setRole("ROLE_USER");
-        System.out.println(person);
+    public void register(PersonDto personDto){
+        String encodedPassword = passwordEncoder.encode(personDto.getPassword());
+        personDto.setPassword(encodedPassword);
+        personDto.setRole("ROLE_USER");
+        System.out.println(personDto);
         //----
         PersonInfo personInfo = personInfoService.savePersonInfo(new PersonInfo());
-        person.setDetails(personInfo);
+        personDto.setDetails(personInfo);
         //----
-        peopleRepository.save(person);
-        System.out.println(person);
+        peopleRepository.save(PersonMapper.personDtoToPerson(personDto));
+        System.out.println(personDto);
     }
 }

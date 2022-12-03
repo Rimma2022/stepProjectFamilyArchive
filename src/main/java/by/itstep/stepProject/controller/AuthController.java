@@ -2,9 +2,12 @@ package by.itstep.stepProject.controller;
 
 import by.itstep.stepProject.bean.ChildDto;
 import by.itstep.stepProject.bean.PersonDto;
+import by.itstep.stepProject.mapper.PersonMapper;
 import by.itstep.stepProject.model.Person;
+import by.itstep.stepProject.security.PersonDetails;
 import by.itstep.stepProject.service.RegistrationService;
 import by.itstep.stepProject.util.PersonValidator;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,11 +25,11 @@ public class AuthController {
         this.personValidator = personValidator;
     }
 
+
     @GetMapping("/index")
     public String loginPage(){
         return "index";
     }
-
 
     @GetMapping("/registration")
     public String registrationPage(@ModelAttribute("person") Person person){
@@ -37,22 +40,14 @@ public class AuthController {
     @PostMapping("/registration")
     private String performRegistration(@ModelAttribute("person") @Valid PersonDto personDto,
                                        BindingResult bindingResult){
-        Person person = convertToPerson(personDto);
-        personValidator.validate(person, bindingResult);
+        personValidator.validate(personDto, bindingResult);
         if(bindingResult.hasErrors()){
             return "registrationForm";
         }
-        registrationService.register(person);
+        registrationService.register(personDto);
         return "redirect:/index";
     }
 
-    private Person convertToPerson(PersonDto personDto) {
-        Person person = new Person();
-        person.setName(personDto.getName());
-        person.setEmail(personDto.getEmail());
-        person.setSurname(personDto.getSurname());
-        person.setPassword(personDto.getPassword());
-        return person;
-    }
-}
 
+
+}
