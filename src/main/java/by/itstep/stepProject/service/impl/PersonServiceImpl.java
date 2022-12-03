@@ -19,7 +19,7 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public Person savePersone(Person person) {
+    public Person savePerson(Person person) {
         return personeRepository.save(person);
     }
 
@@ -28,6 +28,5 @@ public class PersonServiceImpl implements PersonService {
         return personeRepository.findById(id)
                 .orElse(null);
     }
-
 
 }

@@ -17,13 +17,11 @@
 <div class="login-page">
     <div class="form">
         <form class="login-form"  >
-            <button type="submit" th:formaction="@{/createChild}">Создать профиль ребенка</button>
-            <br>
-            <br>
-            <div th:each="child:${child_list}">
-                <label th:text="${child.getName()}"></label>
+            <div id="list_child" th:each="child:${child_list}">
+                <button type="submit" th:text="${child.getName()}"></button> <br><br>
             </div>
-            <button>Редактировать информацию о себе</button>
+            <button type="submit" th:formaction="@{/createChild}">Создать профиль ребенка</button>
+<!--            <button>Редактировать информацию о себе</button>-->
         </form>
     </div>
 </div>

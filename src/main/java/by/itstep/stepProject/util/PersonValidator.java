@@ -1,5 +1,6 @@
 package by.itstep.stepProject.util;
 
+import by.itstep.stepProject.bean.PersonDto;
 import by.itstep.stepProject.model.Person;
 import by.itstep.stepProject.service.PersonDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

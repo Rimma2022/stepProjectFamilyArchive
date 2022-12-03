@@ -14,6 +14,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @ToString
 @Entity
+@Builder
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -47,7 +48,7 @@ public class Person {
     //    @Column(name = "education")
 //    private String education;
     @OneToOne
-    private PersonInfo detail;
+    private PersonInfo details;
 
 
 }

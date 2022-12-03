@@ -9,6 +9,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+@Builder
 public class PersonDto {
     private Integer id;
     private String name;

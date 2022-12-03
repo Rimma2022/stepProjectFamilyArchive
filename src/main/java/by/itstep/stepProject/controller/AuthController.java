@@ -54,8 +54,5 @@ public class AuthController {
         person.setPassword(personDto.getPassword());
         return person;
     }
-
-
-
-
 }
+

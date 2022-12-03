@@ -29,7 +29,7 @@ public class RegistrationService {
         System.out.println(person);
         //----
         PersonInfo personInfo = personInfoService.savePersonInfo(new PersonInfo());
-        person.setDetail(personInfo);
+        person.setDetails(personInfo);
         //----
         peopleRepository.save(person);
         System.out.println(person);

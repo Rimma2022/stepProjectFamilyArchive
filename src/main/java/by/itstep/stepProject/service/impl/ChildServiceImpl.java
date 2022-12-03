@@ -11,7 +11,6 @@ import by.itstep.stepProject.service.PersonInfoService;
 import by.itstep.stepProject.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,9 +33,9 @@ public class ChildServiceImpl implements ChildService {
 
 
         Person person = personService.findById(child.getMainParentId()).orElse(null);
-        person = person == null ? personService.savePersone(new Person()) : person;
-        detail = person.getDetail() == null ? service.savePersonInfo(new PersonInfo()) : person.getDetail();
-        person.setDetail(detail);
+        person = person == null ? personService.savePerson(new Person()) : person;
+        detail = person.getDetails() == null ? service.savePersonInfo(new PersonInfo()) : person.getDetails();
+        person.setDetails(detail);
 
         Child save = childRepository.save(ChildMapper.childDtoToChild(child, person));
 
@@ -45,14 +44,14 @@ public class ChildServiceImpl implements ChildService {
         childList.add(save);
         detail.setChildrenList(childList);
         PersonInfo personInfo = service.savePersonInfo(detail);
-        person.setDetail(personInfo);
-        personService.savePersone(person);
+        person.setDetails(personInfo);
+        personService.savePerson(person);
     }
 
     @Override
     public List<Child> getChildList(Integer personId) {
         Person person = personService.getPerson(personId);
-        PersonInfo detail = person != null ? person.getDetail() : null;
+        PersonInfo detail = person != null ? person.getDetails() : null;
         return detail != null ?
                 detail.getChildrenList() :
                 new ArrayList<>();

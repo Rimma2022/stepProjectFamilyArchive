@@ -42,7 +42,7 @@ public class ChildController {
 //        childService.saveChild(child);
 //
 //
-        return "redirect:/afterLogIn" + id;
+        return "redirect:/afterLogIn";
     }
 //    private Child convertToChild (ChildDto childDto, Integer persId) {
 //        Child child = new Child();
@@ -51,13 +51,12 @@ public class ChildController {
 //        return child;
 //    }
 
-    @GetMapping("/afterLogIn")
-    public String showChild() {
-        return "afterLogIn";
-    }
 
-    @GetMapping("/afterLogIn/{id}")
-    public String showChild(@PathVariable Integer id,  Model model) {
+
+    @GetMapping("/afterLogIn")
+    public String showChild(Model model) {
+        PersonDetails personDetails = (PersonDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        Integer id = personDetails.getPerson().getId();
         List<Child> childList = childService.getChildList(id);
         model.addAttribute("child_list",childList);
         return "afterLogIn";

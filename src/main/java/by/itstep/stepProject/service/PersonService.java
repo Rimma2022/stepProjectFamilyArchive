@@ -8,6 +8,6 @@ import java.util.Optional;
 public interface PersonService {
     Optional<Person> findById(Integer mainParentId);
 
-    Person savePersone(Person person);
+    Person savePerson(Person person);
     Person getPerson(Integer id);
 }
