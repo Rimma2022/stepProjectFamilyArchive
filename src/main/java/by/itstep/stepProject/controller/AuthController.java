@@ -1,13 +1,9 @@
 package by.itstep.stepProject.controller;
 
-import by.itstep.stepProject.bean.ChildDto;
 import by.itstep.stepProject.bean.PersonDto;
-import by.itstep.stepProject.mapper.PersonMapper;
 import by.itstep.stepProject.model.Person;
-import by.itstep.stepProject.security.PersonDetails;
 import by.itstep.stepProject.service.RegistrationService;
 import by.itstep.stepProject.util.PersonValidator;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;

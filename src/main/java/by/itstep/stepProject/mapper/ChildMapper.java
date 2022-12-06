@@ -8,7 +8,6 @@ import java.time.LocalDate;
 
 public class ChildMapper {
     public static Child childDtoToChild(ChildDto dto, Person person){
-
         return Child.builder()
                 .email(dto.getEmail())
                 .mainParent(person)

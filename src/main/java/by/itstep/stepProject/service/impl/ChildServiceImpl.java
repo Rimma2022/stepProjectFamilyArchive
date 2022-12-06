@@ -29,9 +29,6 @@ public class ChildServiceImpl implements ChildService {
         PersonInfo detail = null;
 
 
-        System.out.println(child);
-
-
         Person person = personService.findById(child.getMainParentId()).orElse(null);
         person = person == null ? personService.savePerson(new Person()) : person;
         detail = person.getDetails() == null ? service.savePersonInfo(new PersonInfo()) : person.getDetails();
@@ -56,4 +53,6 @@ public class ChildServiceImpl implements ChildService {
                 detail.getChildrenList() :
                 new ArrayList<>();
     }
+
+
 }

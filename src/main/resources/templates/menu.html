@@ -13,27 +13,19 @@
 
 <div class="login-page">
     <div class="form">
-        <form  class="register-form" th:action="@{/logout}" th:method="post">
-            <button type="submit" th:formaction="@{/index}">Рождение</button>
-            <button type="submit" th:formaction="@{/index}">Истоия болезней</button>
-            <button type="submit" th:formaction="@{/index}">Вакцинация</button>
+        <form class="register-form" >
+<!--            <button type="submit" th:formaction="@{/index}">Рождение</button>-->
+<!--            <button type="submit" th:formaction="@{/index}">Истоия болезней</button>-->
+<!--            <button type="submit" th:formaction="@{/index}">Вакцинация</button>-->
             <button type="submit" th:formaction="@{/index}">Родственники</button>
-            <button type="submit" th:formaction="@{/index}">Важные события</button>
-            <button type="submit" th:formaction="@{/index}">Сообщения</button>
+            <button type="submit" th:formaction="@{/events}">Важные события</button>
+<!--            <button type="submit" th:formaction="@{/index}">Сообщения</button>-->
+        </form>
+        <form  class="register-form" th:action="@{/logout}" th:method="post">
             <button id="lastButton" type="submit" th:formaction="@{/logout}">Выход</button>
         </form>
     </div>
 </div >
-<!--<div>-->
-<!--    <form  th:action="@{/logout}" th:method="post">-->
-<!--        <input class="exit" type="submit" value="Выход"/>-->
-<!--    </form>-->
-<!--</div>-->
-
-
-
-
-
 
 </body>
 </html>

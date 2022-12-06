@@ -13,15 +13,38 @@
 
 </head>
 
+<!--<body>-->
+<!--<div class="login-page">-->
+<!--    <div class="form">-->
+<!--        <div id="child_list" th:each="child:${child_list}">-->
+<!--            <form class="login-form" id="3"-->
+<!--                  method="post" th:action="@{/menu/(id=${child.getId()})}" th:object="${childDto}">-->
+<!--                <button form="3" type="submit" th:text="${child.getName()}" th:value="${child.getId}">-->
+<!--                </button>-->
+<!--                <br><br>-->
+
+<!--            </form>-->
+<!--        </div>-->
+<!--        <form>-->
+<!--            <button type="submit" th:formaction="@{/createChild}">Создать профиль ребенка</button>-->
+<!--        </form>-->
+<!--    </div>-->
+<!--</div>-->
+<!--</body>-->
+
 <body>
 <div class="login-page">
     <div class="form">
-        <form class="login-form"  >
-            <div id="list_child" th:each="child:${child_list}">
-                <button type="submit" th:text="${child.getName()}"></button> <br><br>
-            </div>
+        <div id="list_child" th:each="child:${child_list}">
+            <form class="login-form"
+                  method="GET" th:action="@{/menu/{id}(id = ${child.getId()})}">
+                <button  th:text="${child.getName()}" th:value="${child.getId()}">
+                </button>
+                <br><br>
+            </form>
+        </div>
+        <form>
             <button type="submit" th:formaction="@{/createChild}">Создать профиль ребенка</button>
-<!--            <button>Редактировать информацию о себе</button>-->
         </form>
     </div>
 </div>

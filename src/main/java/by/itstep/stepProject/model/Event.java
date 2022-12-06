@@ -11,6 +11,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @ToString
 @Entity
+@Builder
 public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

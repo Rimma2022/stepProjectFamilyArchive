@@ -28,8 +28,6 @@ public class Person {
     @NotEmpty (message = "Не указана фамилия")
     @Column(name = "surname")
     private String surname;
-//    @Column(name = "fullName")
-//    private String fullName;
     @Column(name = "password")
     private String password;
     @Email (message = "Неверно указан email")
