@@ -3,7 +3,7 @@
 <html xmlns:th="http://thymeaLeaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Menu</title>
     <link rel="stylesheet" href="..static/css/body.css" th:href="@{css/bodyMenu.css}">
     <link rel="stylesheet" href="..static/css/form.css" th:href="@{css/formMenu.css}">
     
@@ -13,15 +13,27 @@
 
 <div class="login-page">
     <div class="form">
-        <form  class="register-form">
+        <form  class="register-form" th:action="@{/logout}" th:method="post">
             <button type="submit" th:formaction="@{/index}">Рождение</button>
-            <button type="submit" th:formaction="@{/index}">Здоровье</button>
+            <button type="submit" th:formaction="@{/index}">Истоия болезней</button>
+            <button type="submit" th:formaction="@{/index}">Вакцинация</button>
             <button type="submit" th:formaction="@{/index}">Родственники</button>
             <button type="submit" th:formaction="@{/index}">Важные события</button>
-            <button id="lastButton" type="submit" th:formaction="@{/index}">Сообщения</button>
+            <button type="submit" th:formaction="@{/index}">Сообщения</button>
+            <button id="lastButton" type="submit" th:formaction="@{/logout}">Выход</button>
         </form>
     </div>
-</div>
+</div >
+<!--<div>-->
+<!--    <form  th:action="@{/logout}" th:method="post">-->
+<!--        <input class="exit" type="submit" value="Выход"/>-->
+<!--    </form>-->
+<!--</div>-->
+
+
+
+
+
 
 </body>
 </html>

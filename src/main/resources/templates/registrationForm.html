@@ -15,12 +15,20 @@
 <h1>Family Archive</h1>
 <div class="login-page">
     <div class="form">
-        <form  class="register-form" method="post" action="#" th:action="@{/create}" th:object="${person}">
-            <input th:field = *{name} type="text" placeholder="Name" />
-            <input th:field = *{surname} type="text" placeholder="Surname" />
-            <input th:field = *{password} type="password" placeholder="Password" />
-            <input th:field = *{email} type="text" placeholder="Email address" />
-            <button>create</button>
+        <form  class="register-form" th:method="post"  th:action="@{/registration}" th:object="${person}">
+            <input th:field = "*{name}" type="text"  placeholder="Name" id="name" />
+            <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"> Username Error
+            </div>
+            <input th:field = "*{surname}" type="text"  placeholder="Surname" id="surname"/>
+            <div style="color:red" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}"> Surname Error
+            </div>
+            <input th:field = "*{password}" type="password"  placeholder="Password" id="password"/>
+            <div style="color:red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"> Password Error
+            </div>
+            <input th:field = "*{email}" type="text"  placeholder="Email address" id="username"/>
+            <div style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"> Email Error
+            </div>
+            <button type="submit">create</button>
             <p class="message">Already registered? <a href="/index" th:href="@{/index}">Sign In</a></p>
         </form>
     </div>

@@ -16,4 +16,5 @@ public class Profession {
     private Integer id;
     @Column(name = "name")
     private String name;
+
 }

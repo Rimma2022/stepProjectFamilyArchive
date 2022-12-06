@@ -1,0 +1,10 @@
+.login-page {
+    width: 360px;
+    padding: 15% 0 0;
+    margin: auto;
+}
+#list_child button{
+    /*background: rgb(182, 126, 4);*/
+    background: rgb(100, 165, 199);
+}
+

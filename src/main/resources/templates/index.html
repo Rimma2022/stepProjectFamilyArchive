@@ -16,11 +16,15 @@
 <h1>Family Archive</h1>
 <div class="login-page">
     <div class="form">
-        <form class="login-form" action="/menu">
+        <form class="login-form" method="post" action="/process_login">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
             <input type="text" name="username" placeholder="Email" />
             <input type="password" name="password" placeholder="Password" >
             <button>login</button>
             <p class="message">Not registered? <a href="/registration" th:href="@{/registration}">Create an account</a></p>
+            <div th:if="${param.error}" style="color: red">
+                Неправильные имя или пароль
+            </div>
 
         </form>
     </div>

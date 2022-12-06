@@ -2,10 +2,7 @@ package by.itstep.stepProject.model;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -17,7 +14,9 @@ public class Illness {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+    @Column(name = "nameIllness")
     private String name;
+    @Column(name = "age")
     private Integer age;
 
     ///todo
