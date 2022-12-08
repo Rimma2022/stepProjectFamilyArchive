@@ -3,6 +3,7 @@ package by.itstep.stepProject.service.impl;
 import by.itstep.stepProject.bean.ChildDto;
 import by.itstep.stepProject.mapper.ChildMapper;
 import by.itstep.stepProject.model.Child;
+import by.itstep.stepProject.model.Illness;
 import by.itstep.stepProject.model.Person;
 import by.itstep.stepProject.model.PersonInfo;
 import by.itstep.stepProject.repository.ChildRepository;
@@ -58,5 +59,12 @@ public class ChildServiceImpl implements ChildService {
     public Child getChild(Integer id) {
         Child child = childRepository.findById(id).orElse(null);
         return child;
+    }
+
+    @Override
+    public List<Illness> getIllnessList(Integer id) {
+        Child child = childRepository.findById(id).orElse(null);
+        return child.getIllnessesList();
+
     }
 }

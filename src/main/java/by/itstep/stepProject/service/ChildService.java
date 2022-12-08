@@ -2,6 +2,7 @@ package by.itstep.stepProject.service;
 
 import by.itstep.stepProject.bean.ChildDto;
 import by.itstep.stepProject.model.Child;
+import by.itstep.stepProject.model.Illness;
 
 
 import java.util.List;
@@ -13,4 +14,5 @@ public interface ChildService {
     Child getChild(Integer id);
 
 
+    List<Illness> getIllnessList(Integer id);
 }

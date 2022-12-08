@@ -18,8 +18,9 @@
 <!--            <button type="submit" th:formaction="@{/index}">Рождение</button>-->
 <!--            <button type="submit" th:formaction="@{/index}">Истоия болезней</button>-->
 <!--            <button type="submit" th:formaction="@{/index}">Вакцинация</button>-->
-            <button type="submit" th:formaction="@{/index/(id=${child.getId()})}">Родственники</button>
-            <button type="submit" th:formaction="@{/events/(id=${child.getId()})}">Важные события</button>
+            <button type="submit" th:formaction="@{/IllnessShow/(id=${child.getId()})}">Заболевания</button>
+            <button type="submit" th:formaction="@{/Illness/(id=${child.getId()})}">Внести заболевание</button>
+            <button type="submit" th:formaction="@{/events/(id=${child.getId()})}">Внести важное событиe</button>
 <!--            <button type="submit" th:formaction="@{/index}">Сообщения</button>-->
         </form>
         <form  class="register-form" th:action="@{/logout}" th:method="post">

@@ -19,7 +19,7 @@ public class Child {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @OneToMany
-    private List<Illness> illnesses;
+    private List<Illness> illnessesList;
     @OneToMany
     private List<Event> eventsList;
     @OneToMany
