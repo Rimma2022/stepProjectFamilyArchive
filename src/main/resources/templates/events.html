@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Menu</title>
-    <link rel="stylesheet" href="..static/css/body.css" th:href="@{css/bodyMenu.css}">
-    <link rel="stylesheet" href="..static/css/form.css" th:href="@{css/formMenu.css}">
+    <link rel="stylesheet" href="..static/css/body.css" th:href="@{/css/bodyMenu.css}">
+    <link rel="stylesheet" href="..static/css/form.css" th:href="@{/css/formMenu.css}">
 
 
 </head>
-<body>
+<body th:object="${child}">
 
 
 <div class="login-page">
     <div class="form">
-        <form class="register-form" th:action="@{/createEvent}" th:method="post" th:object="${eventDto}">
+        <form class="register-form" th:action="@{/createEvent/(id=${child.getId()})}" th:method="post" th:object="${eventDto}">
             <input th:field = "*{name}" type="text"  placeholder="Название"/>
             <p>Дата:<input type="date" th:field = "*{date}"> </p>
 

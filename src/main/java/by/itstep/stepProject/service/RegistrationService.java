@@ -2,7 +2,6 @@ package by.itstep.stepProject.service;
 
 import by.itstep.stepProject.bean.PersonDto;
 import by.itstep.stepProject.mapper.PersonMapper;
-import by.itstep.stepProject.model.Person;
 import by.itstep.stepProject.model.PersonInfo;
 import by.itstep.stepProject.repository.PeopleRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;

@@ -17,12 +17,10 @@ public class PersonInfo {
     private Integer id;
     @Column(name = "education")
     private String education;
-    @OneToMany(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
-//    @JoinColumn(name = "childId", foreignKey = @ForeignKey(name = "childId"))
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Child> childrenList;
-    @OneToMany(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
-//    @JoinColumn(name = "professionsListId", foreignKey = @ForeignKey(name = "professionsListId")) //todo
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Profession> professionsList;
-    @ElementCollection //???????
-    private List<Integer> relativeIds; //todo - userIds if u need get from db u need used -> findAllByIdIn(List<Integer> ids)
+    @ElementCollection
+    private List<Integer> relativeIds;
 }

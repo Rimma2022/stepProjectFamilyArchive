@@ -42,9 +42,7 @@ public class Person {
     @Column(name = "role")
     private String role;
     @Column(name = "relativeRole")
-    private String relativeRole;//todo to enum
-    //    @Column(name = "education")
-//    private String education;
+    private String relativeRole;
     @OneToOne
     private PersonInfo details;
 

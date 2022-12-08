@@ -54,5 +54,9 @@ public class ChildServiceImpl implements ChildService {
                 new ArrayList<>();
     }
 
-
+    @Override
+    public Child getChild(Integer id) {
+        Child child = childRepository.findById(id).orElse(null);
+        return child;
+    }
 }

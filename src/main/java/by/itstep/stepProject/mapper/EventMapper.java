@@ -1,9 +1,8 @@
 package by.itstep.stepProject.mapper;
 
 import by.itstep.stepProject.bean.EventDto;
-import by.itstep.stepProject.bean.PersonDto;
 import by.itstep.stepProject.model.Event;
-import by.itstep.stepProject.model.Person;
+
 
 import java.time.LocalDate;
 

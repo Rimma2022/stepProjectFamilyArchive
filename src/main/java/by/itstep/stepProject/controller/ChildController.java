@@ -42,12 +42,4 @@ public class ChildController {
         return "afterLogIn";
     }
 
-
-//    @PostMapping("/menu")
-//    public String showMenu(@RequestParam Integer id, Model model) {
-//        System.out.println(id);
-//        return "menu";
-//    }
-
-
 }

@@ -19,5 +19,4 @@ public class Illness {
     @Column(name = "age")
     private Integer age;
 
-    ///todo
 }
