@@ -16,17 +16,20 @@
 <body>
 <div class="login-page">
     <div class="form">
-        <h3>Перенесенные заболевания</h3>
-        <div  th:each="illness:${illness_list}">
+        <h3>Важные события</h3>
+        <div  th:each="event:${event_list}">
             <form>
                 <table>
                     <tr>
-                        <th>Заболевание</th> <br><br>
-                        <th>Возраст</th>
+                        <th>Событие</th> <br><br>
+                        <th>Дата</th>
+                        <th>Описание</th>
                     </tr>
                     <tr>
-                        <td th:text="${illness.getName()}"></td>
-                        <td th:text="${illness.getAge()}"></td>
+                        <td th:text="${event.getName()}"></td>
+                        <td th:text="${event.getDate()}"></td>
+                        <td id="last" th:text="${event.getDescriptionOfEvent()}"></td>
+
                     </tr>
                 </table>
             </form>

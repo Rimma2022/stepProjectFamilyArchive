@@ -20,6 +20,7 @@
 <!--            <button type="submit" th:formaction="@{/index}">Вакцинация</button>-->
             <button type="submit" th:formaction="@{/IllnessShow/(id=${child.getId()})}">Заболевания</button>
             <button type="submit" th:formaction="@{/Illness/(id=${child.getId()})}">Внести заболевание</button>
+            <button type="submit" th:formaction="@{/EventShow/(id=${child.getId()})}">ВАЖНЫЕ СОБЫТИЯ</button>
             <button type="submit" th:formaction="@{/events/(id=${child.getId()})}">Внести важное событиe</button>
 <!--            <button type="submit" th:formaction="@{/index}">Сообщения</button>-->
         </form>

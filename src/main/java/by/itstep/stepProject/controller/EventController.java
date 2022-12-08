@@ -2,6 +2,7 @@ package by.itstep.stepProject.controller;
 
 import by.itstep.stepProject.bean.EventDto;
 import by.itstep.stepProject.model.Child;
+import by.itstep.stepProject.model.Event;
 import by.itstep.stepProject.service.ChildService;
 import by.itstep.stepProject.service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 @Controller
@@ -36,13 +38,19 @@ public class EventController {
         return "events";
     }
 
-    @PostMapping("/createEvent")
+    @GetMapping("/createEvent")
     private String createEvent(@RequestParam Integer id, @ModelAttribute("EventDto") EventDto eventDto, Model model) {
         Child child = childService.getChild(id);
-        System.out.println(child);
         eventService.saveEvent(eventDto, child);
         model.addAttribute("event_list", new ArrayList<>());
         return "redirect:/afterLogIn";
+    }
+
+    @PostMapping("/EventShow")
+    public String showChild( @RequestParam Integer id, Model model) {
+        List<Event> eventList = childService.getEventList(id);
+        model.addAttribute("event_list", eventList);
+        return "showEvent";
     }
 
 }

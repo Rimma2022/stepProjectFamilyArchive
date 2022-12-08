@@ -2,6 +2,7 @@ package by.itstep.stepProject.service;
 
 import by.itstep.stepProject.bean.ChildDto;
 import by.itstep.stepProject.model.Child;
+import by.itstep.stepProject.model.Event;
 import by.itstep.stepProject.model.Illness;
 
 
@@ -15,4 +16,6 @@ public interface ChildService {
 
 
     List<Illness> getIllnessList(Integer id);
+
+    List<Event> getEventList(Integer id);
 }
