@@ -35,8 +35,8 @@ public class IllnessController {
 
     @PostMapping("/createIllness")
     private String createEvent(@RequestParam Integer id, @ModelAttribute("EventDto") IllnessDto illnessDto, Model model) {
-        Child child = childService.getChild(id);
-        illnessService.saveIllness(illnessDto, child);
+
+        illnessService.saveIllness(illnessDto, id);
         model.addAttribute("illness_list", new ArrayList<>());
         return "redirect:/afterLogIn";
     }

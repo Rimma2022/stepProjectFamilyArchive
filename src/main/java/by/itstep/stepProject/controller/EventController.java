@@ -23,11 +23,11 @@ public class EventController {
     @Autowired
     private ChildService childService;
 
+
     @GetMapping("/menu/{id}")
     public String showMenu(@PathVariable Integer id, Model model) {
         Child child = childService.getChild(id);
         model.addAttribute("child", child);
-        System.out.println(id);
         return "menu";
     }
 
@@ -38,10 +38,9 @@ public class EventController {
         return "events";
     }
 
-    @GetMapping("/createEvent")
+    @PostMapping("/createEvent")
     private String createEvent(@RequestParam Integer id, @ModelAttribute("EventDto") EventDto eventDto, Model model) {
-        Child child = childService.getChild(id);
-        eventService.saveEvent(eventDto, child);
+        eventService.saveEvent(eventDto, id);
         model.addAttribute("event_list", new ArrayList<>());
         return "redirect:/afterLogIn";
     }

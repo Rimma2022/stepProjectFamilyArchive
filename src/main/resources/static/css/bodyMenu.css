@@ -12,3 +12,6 @@ body {
     background-color: peachpuff;
     /* rgb(188, 220, 239); peachpuff */
 }
+#list_child button{
+    background: rgb(100, 165, 199);
+}

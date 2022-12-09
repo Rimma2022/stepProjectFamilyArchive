@@ -22,7 +22,8 @@ public class EventServiceImpl implements EventService {
 
     @Override
     @Transactional
-    public void saveEvent(EventDto eventDto, Child child) {
+    public void saveEvent(EventDto eventDto, Integer id) {
+        Child child = childRepository.findById(id).orElse(null);
         Event event = eventRepository.save(EventMapper.eventDtoToEvent(eventDto));
         child.getEventsList().add(event);
         childRepository.save(child);

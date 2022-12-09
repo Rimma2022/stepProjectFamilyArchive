@@ -41,19 +41,8 @@
 }
 #bday, .form label{
     width: auto;
-    /*float: right;*/
-
    }
-/*.form label {*/
-/*    width: auto;*/
-/*    float: left;*/
-/*    vertical-align: middle;*/
-/*}*/
-
-
-
 .form button {
-    /* font-family: "Roboto", sans-serif; */
     text-transform: uppercase;
     outline: 0;
     background:  #f0c567;
@@ -62,8 +51,6 @@
     padding: 15px;
     color: #FFFFFF;
     font-size: 14px;
-    /* -webkit-transition: all 0.3 ease;
-    transition: all 0.3 ease; */
     cursor: pointer;
     border-radius: 5px;
 }

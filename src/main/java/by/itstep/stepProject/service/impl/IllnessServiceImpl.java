@@ -22,7 +22,8 @@ public class IllnessServiceImpl implements IllnessService {
 
     @Override
     @Transactional
-    public void saveIllness(IllnessDto illnessDto, Child child) {
+    public void saveIllness(IllnessDto illnessDto, Integer id) {
+        Child child = childRepository.findById(id).orElse(null);
         Illness illness = illnessRepository.save(IllnessMapper.illnessDtoToIllness(illnessDto));
         child.getIllnessesList().add(illness);
         childRepository.save(child);

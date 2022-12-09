@@ -21,23 +21,23 @@
             <form>
                 <table>
                     <tr>
-                        <th>Событие</th> <br><br>
+                        <th>Событие</th> <br>
                         <th>Дата</th>
-                        <th>Описание</th>
+                        <th class="description">Описание</th>
                     </tr>
                     <tr>
                         <td th:text="${event.getName()}"></td>
                         <td th:text="${event.getDate()}"></td>
-                        <td id="last" th:text="${event.getDescriptionOfEvent()}"></td>
+                        <td class="description" th:text="${event.getDescriptionOfEvent()}"></td>
 
                     </tr>
                 </table>
             </form>
         </div>
-        <form>
-            <button type="submit" th:formaction="@{/afterLogIn}">Назад</button>
-        </form>
     </div>
+    <form id="lastForm">
+        <button type="submit" th:formaction="@{/afterLogIn}">Назад</button>
+    </form>
 </div>
 </body>
 
