@@ -13,7 +13,7 @@
 
 </head>
 
-<body>
+<body th:object="${child}">
 <div class="login-page">
     <div class="form">
         <h3>Перенесенные заболевания</h3>
@@ -29,6 +29,7 @@
                         <td th:text="${illness.getAge()}"></td>
                     </tr>
                 </table>
+                <button th:formaction="@{/deleteIllness/{id}/{child}(id = ${illness.getId()}, child = ${child.getId()})}" id="buttonForm" type="submit">Удалить</button>
             </form>
         </div>
     </div>

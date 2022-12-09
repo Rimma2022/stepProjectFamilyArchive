@@ -49,7 +49,16 @@ public class EventController {
     public String showChild( @RequestParam Integer id, Model model) {
         List<Event> eventList = childService.getEventList(id);
         model.addAttribute("event_list", eventList);
+        Child child = childService.getChild(id);
+        model.addAttribute("child", child);
         return "showEvent";
+    }
+
+    @GetMapping("/delete/{id}/{child}")
+    public String deleteEvent( @PathVariable ("id") int id, @PathVariable ("child") int childId) {
+        eventService.delete(id, childId);
+        return "redirect:/afterLogIn";
+
     }
 
 }

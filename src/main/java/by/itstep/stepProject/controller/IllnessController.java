@@ -11,10 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,6 +42,14 @@ public class IllnessController {
     public String showChild( @RequestParam Integer id, Model model) {
         List<Illness> illnessList = childService.getIllnessList(id);
         model.addAttribute("illness_list", illnessList);
+        Child child = childService.getChild(id);
+        model.addAttribute("child", child);
         return "showIllnesses";
+    }
+    @GetMapping("/deleteIllness/{id}/{child}")
+    public String deleteEvent(@PathVariable("id") int id, @PathVariable ("child") int childId) {
+        illnessService.delete(id, childId);
+        return "redirect:/afterLogIn";
+
     }
 }
