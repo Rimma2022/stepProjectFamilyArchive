@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://thymeaLeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+    <link rel="stylesheet" href="..static/css/body.css" th:href="@{/css/bodyMenu.css}">
+    <link rel="stylesheet" href="..static/css/form.css" th:href="@{/css/formMenu.css}">
+
+
+</head>
+<body th:object="${child}">
+
+
+<div class="login-page">
+    <div class="form">
+        <form class="register-form" th:action="@{/createEvent/(id=${child.getId()})}" th:method="post"
+              th:object="${eventDto}">
+            <input th:field="*{name}" type="text" placeholder="Название"/>
+            <p>Дата:<input type="date" th:field="*{date}"></p>
+
+            <textarea th:field="*{descriptionOfEvent}" type="text" name="description" placeholder="Описание">
+            </textarea>
+            <button type="submit">Создать</button>
+        </form>
+        <form class="register-form" th:action="@{/logout}" th:method="post">
+            <button id="lastButton" type="submit" th:formaction="@{/logout}">Выход</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

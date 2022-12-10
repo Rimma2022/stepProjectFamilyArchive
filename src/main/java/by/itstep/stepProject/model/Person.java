@@ -1,57 +1,50 @@
 package by.itstep.stepProject.model;
 
 import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 import java.time.LocalDate;
-import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
 @Entity
+@Builder
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Integer id;
+    @NotEmpty (message = "Не указано имя")
     @Column(name = "name")
     private String name;
     @Column(name = "middleName")
     private String middleName;
+    @NotEmpty (message = "Не указана фамилия")
     @Column(name = "surname")
     private String surname;
     @Column(name = "password")
     private String password;
+    @Email (message = "Неверно указан email")
     @Column(name = "email")
+    @NotEmpty(message = "email не должен быть пустым")
     private String email;
     @Column(name = "dateBirth")
+    @DateTimeFormat(pattern = "dd.mm.yyyy")
     private LocalDate dateBirth;
     @Column(name = "dateDied")
     private LocalDate dateDied;
-    @Column(name = "whoIsThis")
-    private String whoIsThis;
-    @Column(name = "education")
-    private String education;
-    @ElementCollection
-    private List<String> profession;
-    @ElementCollection
-    private List<String> illness;
-    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH}, fetch=FetchType.LAZY)
-    @JoinColumn(name = "childId", foreignKey = @ForeignKey(name = "childId"))
-    private List<Child> childrenList;
-//    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH}, fetch=FetchType.LAZY)
-//    @JoinColumn(name = "relativeId", foreignKey = @ForeignKey(name = "relativeId"))
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "person_relative", joinColumns = {@JoinColumn(name="person_id", referencedColumnName = "ID")},
-            inverseJoinColumns = {@JoinColumn(name="relative_id", referencedColumnName = "ID")})
-    private List<Relative> relativesList;
-    public Person(String name, String surname, String password, String email) {
-        this.name = name;
-        this.surname = surname;
-        this.password = password;
-        this.email = email;
-    }
+    @Column(name = "role")
+    private String role;
+    @Column(name = "relativeRole")
+    private String relativeRole;
+    @OneToOne
+    private PersonInfo details;
 
 
 }

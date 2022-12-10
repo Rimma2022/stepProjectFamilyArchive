@@ -6,8 +6,6 @@ body {
     margin: 0%;
     padding: 0%;
     height: 100vh;
-    background-repeat: repeat-x;
     background-position: bottom left, top left;
     background-color: rgb(188, 220, 239);
-    /* rgb(188, 220, 239); peachpuff */
 }
