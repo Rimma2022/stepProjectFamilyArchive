@@ -1,10 +1,8 @@
 package by.itstep.stepProject.service.impl;
 
 import by.itstep.stepProject.bean.IllnessDto;
-import by.itstep.stepProject.mapper.EventMapper;
 import by.itstep.stepProject.mapper.IllnessMapper;
 import by.itstep.stepProject.model.Child;
-import by.itstep.stepProject.model.Event;
 import by.itstep.stepProject.model.Illness;
 import by.itstep.stepProject.repository.ChildRepository;
 import by.itstep.stepProject.repository.IllnessRepository;
@@ -38,7 +36,7 @@ public class IllnessServiceImpl implements IllnessService {
         Child child = childRepository.findById(childId).orElse(null);
         List<Illness> illnessList = child.getIllnessesList();
         Iterator<Illness> illnessIterator = illnessList.iterator();
-        while(illnessIterator.hasNext()) {
+        while (illnessIterator.hasNext()) {
             Illness nextIllness = illnessIterator.next();
             if (nextIllness.getId().equals(id)) {
                 illnessIterator.remove();

@@ -12,6 +12,7 @@ public interface ChildService {
     void saveChild(ChildDto child);
 
     List<Child> getChildList(Integer personId);
+
     Child getChild(Integer id);
 
 

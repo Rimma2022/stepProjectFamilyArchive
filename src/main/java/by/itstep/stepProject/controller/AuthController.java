@@ -16,6 +16,7 @@ import javax.validation.Valid;
 public class AuthController {
     private final RegistrationService registrationService;
     private final PersonValidator personValidator;
+
     public AuthController(RegistrationService registrationService, PersonValidator personValidator) {
         this.registrationService = registrationService;
         this.personValidator = personValidator;
@@ -23,27 +24,26 @@ public class AuthController {
 
 
     @GetMapping("/index")
-    public String loginPage(){
+    public String loginPage() {
         return "index";
     }
 
     @GetMapping("/registration")
-    public String registrationPage(@ModelAttribute("person") Person person){
+    public String registrationPage(@ModelAttribute("person") Person person) {
         return "registrationForm";
     }
 
 
     @PostMapping("/registration")
     private String performRegistration(@ModelAttribute("person") @Valid PersonDto personDto,
-                                       BindingResult bindingResult){
+                                       BindingResult bindingResult) {
         personValidator.validate(personDto, bindingResult);
-        if(bindingResult.hasErrors()){
+        if (bindingResult.hasErrors()) {
             return "registrationForm";
         }
         registrationService.register(personDto);
         return "redirect:/index";
     }
-
 
 
 }

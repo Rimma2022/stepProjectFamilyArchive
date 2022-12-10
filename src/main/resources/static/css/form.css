@@ -16,7 +16,7 @@
     border-radius: 5px;
 }
 
-.form input{
+.form input {
     font-family: "Roboto", sans-serif;
     outline: 0;
     background: #f2f2f2;
@@ -28,6 +28,7 @@
     font-size: 14px;
     border-radius: 5px;
 }
+
 .form select {
     font-family: "Roboto", sans-serif;
     outline: 0;
@@ -39,13 +40,15 @@
     box-sizing: border-box;
     font-size: 14px;
 }
-#bday, .form label{
+
+#bday, .form label {
     width: auto;
-   }
+}
+
 .form button {
     text-transform: uppercase;
     outline: 0;
-    background:  #f0c567;
+    background: #f0c567;
     width: 100%;
     border: 0;
     padding: 15px;
@@ -71,7 +74,8 @@
     color: rgb(133, 192, 223);
     text-decoration: none;
 }
-h1{
+
+h1 {
     color: #f0c567;
     -webkit-text-stroke: 1px #FFFFFF;
     text-shadow: -3px -1px #FFFFFF, -3px -1px #FFFFFF;

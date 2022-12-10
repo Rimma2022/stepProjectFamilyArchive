@@ -34,7 +34,6 @@ public class ChildServiceImpl implements ChildService {
 
         Child save = childRepository.save(ChildMapper.childDtoToChild(child, person));
 
-
         List<Child> childList = detail.getChildrenList().isEmpty() ? new ArrayList<>() : detail.getChildrenList();
         childList.add(save);
         detail.setChildrenList(childList);

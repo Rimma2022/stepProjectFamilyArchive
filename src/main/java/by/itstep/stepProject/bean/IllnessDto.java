@@ -2,7 +2,6 @@ package by.itstep.stepProject.bean;
 
 import lombok.*;
 
-import javax.persistence.Column;
 
 @Getter
 @Setter

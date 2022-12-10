@@ -46,7 +46,7 @@ public class EventController {
     }
 
     @PostMapping("/EventShow")
-    public String showChild( @RequestParam Integer id, Model model) {
+    public String showChild(@RequestParam Integer id, Model model) {
         List<Event> eventList = childService.getEventList(id);
         model.addAttribute("event_list", eventList);
         Child child = childService.getChild(id);
@@ -55,7 +55,7 @@ public class EventController {
     }
 
     @GetMapping("/delete/{id}/{child}")
-    public String deleteEvent( @PathVariable ("id") int id, @PathVariable ("child") int childId) {
+    public String deleteEvent(@PathVariable("id") int id, @PathVariable("child") int childId) {
         eventService.delete(id, childId);
         return "redirect:/afterLogIn";
 

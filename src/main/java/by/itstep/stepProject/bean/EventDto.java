@@ -3,7 +3,6 @@ package by.itstep.stepProject.bean;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
-import java.time.LocalDate;
 
 @Getter
 @Setter

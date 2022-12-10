@@ -17,11 +17,12 @@
 <div class="login-page">
     <div class="form">
         <h3>Важные события</h3>
-        <div  th:each="event:${event_list}">
+        <div th:each="event:${event_list}">
             <form class="lastForm" th:method="get">
                 <table>
                     <tr>
-                        <th>Событие</th> <br>
+                        <th>Событие</th>
+                        <br>
                         <th>Дата</th>
                         <th class="description">Описание</th>
                     </tr>
@@ -29,12 +30,11 @@
                         <td th:text="${event.getName()}"></td>
                         <td th:text="${event.getDate()}"></td>
                         <td class="description" th:text="${event.getDescriptionOfEvent()}"></td>
-
                     </tr>
                 </table>
-                <button th:formaction="@{/delete/{id}/{child}(id = ${event.getId()}, child = ${child.getId()})}" id="buttonForm" type="submit">Удалить</button>
-
-
+                <button th:formaction="@{/delete/{id}/{child}(id = ${event.getId()}, child = ${child.getId()})}"
+                        id="buttonForm" type="submit">Удалить
+                </button>
             </form>
         </div>
     </div>

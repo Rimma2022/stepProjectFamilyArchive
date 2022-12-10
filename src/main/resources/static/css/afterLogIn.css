@@ -1,4 +1,4 @@
-#list_child button{
+#list_child button {
     background: rgb(100, 165, 199);
 }
 
@@ -19,9 +19,16 @@
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     border-radius: 5px;
 }
-body{
+
+body {
     background-image: url("../Children.jpg"), url(../Children.jpg);
     background-repeat: repeat-x;
     background-position: bottom left, top left;
+}
+
+#lastButton {
+    margin: 0;
+    background: rgb(133, 192, 223);
+
 }
 

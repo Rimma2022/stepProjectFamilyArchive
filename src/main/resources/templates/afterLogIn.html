@@ -19,13 +19,17 @@
         <div id="list_child" th:each="child:${child_list}">
             <form class="login-form" id="3"
                   method="GET" th:action="@{/menu/{id}(id = ${child.getId()})}">
-                <button form="3" th:formaction="@{/menu/{id}(id = ${child.getId()})}" th:text="${child.getName()}" >
+                <button form="3" th:formaction="@{/menu/{id}(id = ${child.getId()})}" th:text="${child.getName()}">
                 </button>
                 <br><br>
             </form>
         </div>
         <form>
             <button type="submit" th:formaction="@{/createChild}">Создать профиль ребенка</button>
+        </form>
+        <br>
+        <form class="register-form" th:action="@{/logout}" th:method="post">
+            <button id="lastButton" type="submit" th:formaction="@{/logout}">Выход</button>
         </form>
     </div>
 </div>

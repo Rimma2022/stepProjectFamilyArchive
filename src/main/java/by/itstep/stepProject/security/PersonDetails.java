@@ -4,6 +4,7 @@ import by.itstep.stepProject.model.Person;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
 import java.util.Collection;
 import java.util.Collections;
 
@@ -48,8 +49,9 @@ public class PersonDetails implements UserDetails {
     public boolean isEnabled() { // аккаун работает
         return true;
     }
+
     //чтобы получать данные аутентифицированного пользователя
-    public Person getPerson(){
+    public Person getPerson() {
         return this.person;
     }
 }

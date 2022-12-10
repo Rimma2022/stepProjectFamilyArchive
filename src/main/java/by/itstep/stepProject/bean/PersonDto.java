@@ -21,5 +21,4 @@ public class PersonDto {
     private String relativeRole;
     private PersonInfo details;
     private String role;
-
 }

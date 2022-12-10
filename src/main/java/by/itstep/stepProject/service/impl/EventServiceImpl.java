@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.Iterator;
 import java.util.List;
 
@@ -39,7 +38,7 @@ public class EventServiceImpl implements EventService {
         Child child = childRepository.findById(childId).orElse(null);
         List<Event> eventList = child.getEventsList();
         Iterator<Event> eventIterator = eventList.iterator();
-        while(eventIterator.hasNext()) {
+        while (eventIterator.hasNext()) {
 
             Event nextEvent = eventIterator.next();
             if (nextEvent.getId().equals(id)) {

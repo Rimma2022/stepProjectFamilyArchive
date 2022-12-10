@@ -7,7 +7,7 @@ import by.itstep.stepProject.model.Event;
 import java.time.LocalDate;
 
 public class EventMapper {
-    public static Event eventDtoToEvent(EventDto dto){
+    public static Event eventDtoToEvent(EventDto dto) {
         return Event.builder()
                 .name(dto.getName())
                 .date(LocalDate.parse(dto.getDate()))

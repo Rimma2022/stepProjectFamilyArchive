@@ -10,18 +10,18 @@
 <body>
 <div class="login-page">
     <div class="form">
-        <form  class="register-form" th:method="post"  th:action="@{/createChild}" th:object="${childDto}">
+        <form class="register-form" th:method="post" th:action="@{/createChild}" th:object="${childDto}">
             <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
-            <select  name="gender">
+            <select name="gender">
                 <option selected>Выберите пол ребенка</option>
-                <option th:field = "*{gender}" value="Мальчик">Мальчик</option>
-                <option th:field = "*{gender}" value="Девочка">Девочка</option>
+                <option th:field="*{gender}" value="Мальчик">Мальчик</option>
+                <option th:field="*{gender}" value="Девочка">Девочка</option>
             </select>
-            <input th:field = "*{name}" type="text"  placeholder="Имя"/>
-            <input th:field = "*{middleName}" type="text"  placeholder="Отчество" />
-            <input th:field = "*{surname}" type="text"  placeholder="Фамилия"/>
-            <input th:field = "*{email}" type="text"  placeholder="Электронная почта" />
-            <p>Дата рождения:<input type="date" th:field = "*{dateBirth}"> </p>
+            <input th:field="*{name}" type="text" placeholder="Имя"/>
+            <input th:field="*{middleName}" type="text" placeholder="Отчество"/>
+            <input th:field="*{surname}" type="text" placeholder="Фамилия"/>
+            <input th:field="*{email}" type="text" placeholder="Электронная почта"/>
+            <p>Дата рождения:<input type="date" th:field="*{dateBirth}"></p>
             <button type="submit">Создать</button>
             <p class="message">Уже создан профиль ребенка? <a href="/afterLogIn" th:href="@{/afterLogIn}">Назад</a></p>
         </form>

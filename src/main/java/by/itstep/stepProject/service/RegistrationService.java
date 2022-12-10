@@ -23,15 +23,15 @@ public class RegistrationService {
 
 
     @Transactional
-    public void register(PersonDto personDto){
+    public void register(PersonDto personDto) {
         String encodedPassword = passwordEncoder.encode(personDto.getPassword());
         personDto.setPassword(encodedPassword);
         personDto.setRole("ROLE_USER");
         System.out.println(personDto);
-        //----
+
         PersonInfo personInfo = personInfoService.savePersonInfo(new PersonInfo());
         personDto.setDetails(personInfo);
-        //----
+
         peopleRepository.save(PersonMapper.personDtoToPerson(personDto));
         System.out.println(personDto);
     }

@@ -14,16 +14,17 @@
 
 <div class="login-page">
     <div class="form">
-        <form class="register-form" th:action="@{/createIllness/(id=${child.getId()})}" th:method="post" th:object="${illnessDto}">
-            <input th:field = "*{name}" type="text"  placeholder="Название заболевания"/>
-            <input th:field = "*{age}" type="text"  placeholder="В каком возрасте болел ребенок"/>
+        <form class="register-form" th:action="@{/createIllness/(id=${child.getId()})}" th:method="post"
+              th:object="${illnessDto}">
+            <input th:field="*{name}" type="text" placeholder="Название заболевания"/>
+            <input th:field="*{age}" type="text" placeholder="В каком возрасте болел ребенок"/>
             <button type="submit">Создать</button>
         </form>
-        <form  class="register-form" th:action="@{/logout}" th:method="post">
+        <form class="register-form" th:action="@{/logout}" th:method="post">
             <button id="lastButton" type="submit" th:formaction="@{/logout}">Выход</button>
         </form>
     </div>
-</div >
+</div>
 
 </body>
 </html>

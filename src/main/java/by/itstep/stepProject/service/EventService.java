@@ -6,5 +6,5 @@ public interface EventService {
     void saveEvent(EventDto eventDto, Integer id);
 
 
-    void delete(Integer id, Integer childId );
+    void delete(Integer id, Integer childId);
 }

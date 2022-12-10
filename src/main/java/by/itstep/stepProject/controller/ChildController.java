@@ -42,4 +42,12 @@ public class ChildController {
         return "afterLogIn";
     }
 
+    @PostMapping("/childShow")
+    public String showChildMore(@RequestParam Integer id, Model model) {
+        Child child = childService.getChild(id);
+        model.addAttribute("child", child);
+        return "showChild";
+    }
+
+
 }

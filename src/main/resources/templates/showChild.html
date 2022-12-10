@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://thymeaLeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="..static/css/body.css" th:href="@{/css/bodyMenu.css}">
+    <link rel="stylesheet" href="..static/css/form.css" th:href="@{/css/form.css}">
+    <link rel="stylesheet" href="..static/css/form.css" th:href="@{/css/child.css}">
+
+
+</head>
+
+<body>
+<div class="login-page">
+    <div class="form">
+        <h3>Ребенок</h3>
+        <form class="lastForm" th:method="post" th:object="${child}">
+            <p th:text="${child.getSurname()}"></p>
+            <p th:text="${child.getName()}"></p>
+            <p th:text="${child.getMiddleName()}"></p>
+            <p th:text="${child.getDateBirth()}"></p>
+            <p th:text="${child.getEmail()}"></p>
+        </form>
+    </div>
+    <form id="lastForm">
+        <button type="submit" th:formaction="@{/afterLogIn}">Назад</button>
+    </form>
+</div>
+</body>
+
+</html>

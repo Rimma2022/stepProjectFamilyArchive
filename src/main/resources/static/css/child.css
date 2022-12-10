@@ -3,8 +3,8 @@ body {
 }
 
 .login-page {
-    width: 480px;
-    padding: 8.5% 0 0;
+    width: 360px;
+    padding: 12% 0 0;
     margin: auto;
 }
 
@@ -12,14 +12,13 @@ body {
     position: relative;
     z-index: 1;
     background: #FFFFFF;
-    max-width: 480px;
+    max-width: 360px;
     margin: 0px;
     padding: 45px;
     text-align: left;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     border-radius: 5px 5px 0 0;
-    overflow-y: scroll;
-    height: 400px;
+
 }
 
 body {
@@ -32,24 +31,6 @@ h3 {
     text-align: center;
     margin: 0px;
     padding: 0px;
-}
-
-th {
-    width: 140px;
-}
-
-td {
-    width: 140px;
-    height: 30px;
-}
-
-.description {
-    width: 200px;
-}
-
-table {
-    width: 480px;
-
 }
 
 #last {
@@ -74,7 +55,7 @@ button {
     position: relative;
     z-index: 1;
     background: #FFFFFF;
-    max-width: 480px;
+    max-width: 360px;
     margin: 0 auto 100px;
     padding: 20px;
     text-align: center;
@@ -95,5 +76,4 @@ button {
     cursor: pointer;
     border-radius: 5px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24)
-
 }

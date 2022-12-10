@@ -1,6 +1,6 @@
 .login-page {
     width: 420px;
-    padding: 8% 0 0;
+    padding: 10% 0 0;
     margin: auto;
 }
 
@@ -15,10 +15,11 @@
     box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.2), 0 20px 20px 0 rgba(0, 0, 0, 0.24);
     border-radius: 5px;
 }
+
 .form button {
     text-transform: uppercase;
     outline: 0;
-    background:  #f0c567;
+    background: #f0c567;
     width: 100%;
     border: 0;
     padding: 15px;
@@ -35,13 +36,14 @@
 .form button:focus {
     background: rgb(133, 192, 223);
 }
-#lastButton{
+
+#lastButton {
     margin: 0;
     background: rgb(133, 192, 223);
 
 }
 
-.form input, textarea{
+.form input, textarea {
     font-family: "Roboto", sans-serif;
     outline: 0;
     background: #f2f2f2;
@@ -53,6 +55,7 @@
     font-size: 14px;
     border-radius: 5px;
 }
+
 
 
 

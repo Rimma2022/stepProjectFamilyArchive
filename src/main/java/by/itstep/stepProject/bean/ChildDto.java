@@ -1,13 +1,9 @@
 package by.itstep.stepProject.bean;
 
 
-
-import by.itstep.stepProject.model.Event;
-import by.itstep.stepProject.model.Person;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
-import java.util.List;
 
 @Getter
 @Setter
