@@ -10,6 +10,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @ToString
 @Entity
+@Builder
 public class Illness {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,7 +18,6 @@ public class Illness {
     @Column(name = "nameIllness")
     private String name;
     @Column(name = "age")
-    private Integer age;
+    private String age;
 
-    ///todo
 }

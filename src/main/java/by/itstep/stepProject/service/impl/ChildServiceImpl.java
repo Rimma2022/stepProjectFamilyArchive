@@ -2,9 +2,7 @@ package by.itstep.stepProject.service.impl;
 
 import by.itstep.stepProject.bean.ChildDto;
 import by.itstep.stepProject.mapper.ChildMapper;
-import by.itstep.stepProject.model.Child;
-import by.itstep.stepProject.model.Person;
-import by.itstep.stepProject.model.PersonInfo;
+import by.itstep.stepProject.model.*;
 import by.itstep.stepProject.repository.ChildRepository;
 import by.itstep.stepProject.service.ChildService;
 import by.itstep.stepProject.service.PersonInfoService;
@@ -29,16 +27,12 @@ public class ChildServiceImpl implements ChildService {
         PersonInfo detail = null;
 
 
-        System.out.println(child);
-
-
         Person person = personService.findById(child.getMainParentId()).orElse(null);
         person = person == null ? personService.savePerson(new Person()) : person;
         detail = person.getDetails() == null ? service.savePersonInfo(new PersonInfo()) : person.getDetails();
         person.setDetails(detail);
 
         Child save = childRepository.save(ChildMapper.childDtoToChild(child, person));
-
 
         List<Child> childList = detail.getChildrenList().isEmpty() ? new ArrayList<>() : detail.getChildrenList();
         childList.add(save);
@@ -55,5 +49,24 @@ public class ChildServiceImpl implements ChildService {
         return detail != null ?
                 detail.getChildrenList() :
                 new ArrayList<>();
+    }
+
+    @Override
+    public Child getChild(Integer id) {
+        Child child = childRepository.findById(id).orElse(null);
+        return child;
+    }
+
+    @Override
+    public List<Illness> getIllnessList(Integer id) {
+        Child child = childRepository.findById(id).orElse(null);
+        return child.getIllnessesList();
+
+    }
+
+    @Override
+    public List<Event> getEventList(Integer id) {
+        Child child = childRepository.findById(id).orElse(null);
+        return child.getEventsList();
     }
 }

@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class FamilyArchiveApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(FamilyArchiveApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(FamilyArchiveApplication.class, args);
+    }
 }

@@ -4,29 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="..static/css/body.css" th:href="@{css/body.css}">
-    <link rel="stylesheet" href="..static/css/formCreateChild.css" th:href="@{css/formCreateChild.css}">
+    <link rel="stylesheet" href="..static/css/body.css" th:href="@{/css/body.css}">
+    <link rel="stylesheet" href="..static/css/formCreateChild.css" th:href="@{/css/formCreateChild.css}">
 </head>
 <body>
 <div class="login-page">
     <div class="form">
-        <form  class="register-form" th:method="post"  th:action="@{/createChild}" th:object="${childDto}">
-            <select  name="gender">
+        <form class="register-form" th:method="post" th:action="@{/createChild}" th:object="${childDto}">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+            <select name="gender">
                 <option selected>Выберите пол ребенка</option>
-                <option th:field = "*{gender}" value="Мальчик">Мальчик</option>
-                <option th:field = "*{gender}" value="Девочка">Девочка</option>
+                <option th:field="*{gender}" value="Мальчик">Мальчик</option>
+                <option th:field="*{gender}" value="Девочка">Девочка</option>
             </select>
-            <input th:field = "*{name}" type="text"  placeholder="Имя"/>
-            <input th:field = "*{middleName}" type="text"  placeholder="Отчество" />
-            <input th:field = "*{surname}" type="text"  placeholder="Фамилия"/>
-            <input th:field = "*{email}" type="text"  placeholder="Электронная почта" />
-            <p>Дата рождения:<input type="date" th:field = "*{dateBirth}"> </p>
-<!--            <div>-->
-<!--                <label for="bday">Дата рождения:</label>-->
-<!--                <input id="bday" th:field = "*{dateBirth}" type="date" name="selectdate" placeholder="dateBirth" />-->
-<!--            </div>-->
+            <input th:field="*{name}" type="text" placeholder="Имя"/>
+            <input th:field="*{middleName}" type="text" placeholder="Отчество"/>
+            <input th:field="*{surname}" type="text" placeholder="Фамилия"/>
+            <input th:field="*{email}" type="text" placeholder="Электронная почта"/>
+            <p>Дата рождения:<input type="date" th:field="*{dateBirth}"></p>
             <button type="submit">Создать</button>
-            <p class="message">Уже создан профиль ребенка? <a href="/formAfterRegistration" th:href="@{/formAfterRegistration}">Назад</a></p>
+            <p class="message">Уже создан профиль ребенка? <a href="/afterLogIn" th:href="@{/afterLogIn}">Назад</a></p>
         </form>
     </div>
 </div>

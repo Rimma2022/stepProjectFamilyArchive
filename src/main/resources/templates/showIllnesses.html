@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://thymeaLeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="..static/css/body.css" th:href="@{/css/bodyMenu.css}">
+    <link rel="stylesheet" href="..static/css/form.css" th:href="@{/css/form.css}">
+    <link rel="stylesheet" href="..static/css/form.css" th:href="@{/css/showIllnesses.css}">
+
+
+</head>
+
+<body th:object="${child}">
+<div class="login-page">
+    <div class="form">
+        <h3>Перенесенные заболевания</h3>
+        <div th:each="illness:${illness_list}">
+            <form>
+                <table>
+                    <tr>
+                        <th>Заболевание</th>
+                        <br><br>
+                        <th>Возраст</th>
+                    </tr>
+                    <tr>
+                        <td th:text="${illness.getName()}"></td>
+                        <td th:text="${illness.getAge()}"></td>
+                    </tr>
+                </table>
+                <button th:formaction="@{/deleteIllness/{id}/{child}(id = ${illness.getId()}, child = ${child.getId()})}"
+                        id="buttonForm" type="submit">Удалить
+                </button>
+            </form>
+        </div>
+    </div>
+    <form id="lastForm">
+        <button type="submit" th:formaction="@{/afterLogIn}">Вернуться к списку детей</button>
+    </form>
+
+</div>
+</body>
+
+</html>

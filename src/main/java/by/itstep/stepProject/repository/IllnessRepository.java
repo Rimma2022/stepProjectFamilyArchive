@@ -1,13 +1,9 @@
 package by.itstep.stepProject.repository;
 
-import by.itstep.stepProject.model.Child;
+import by.itstep.stepProject.model.Illness;
 import org.springframework.data.jpa.repository.JpaRepository;
-
 import org.springframework.stereotype.Repository;
 
-
 @Repository
-public interface ChildRepository extends JpaRepository<Child, Integer> {
-
-
+public interface IllnessRepository extends JpaRepository<Illness, Integer> {
 }

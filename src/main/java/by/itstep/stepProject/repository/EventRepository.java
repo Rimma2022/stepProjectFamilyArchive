@@ -1,13 +1,11 @@
 package by.itstep.stepProject.repository;
 
-import by.itstep.stepProject.model.Child;
+import by.itstep.stepProject.model.Event;
 import org.springframework.data.jpa.repository.JpaRepository;
-
 import org.springframework.stereotype.Repository;
 
-
 @Repository
-public interface ChildRepository extends JpaRepository<Child, Integer> {
+public interface EventRepository extends JpaRepository<Event, Integer> {
 
 
 }

@@ -7,8 +7,7 @@ import by.itstep.stepProject.model.Person;
 import java.time.LocalDate;
 
 public class ChildMapper {
-    public static Child childDtoToChild(ChildDto dto, Person person){
-
+    public static Child childDtoToChild(ChildDto dto, Person person) {
         return Child.builder()
                 .email(dto.getEmail())
                 .mainParent(person)
@@ -19,6 +18,7 @@ public class ChildMapper {
                 .dateBirth(LocalDate.parse(dto.getDateBirth()))
                 .build();
     }
+
 }
 
 

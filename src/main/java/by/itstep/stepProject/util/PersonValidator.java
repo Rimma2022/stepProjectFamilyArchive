@@ -23,9 +23,9 @@ public class PersonValidator implements Validator {
 
     @Override
     public void validate(Object target, Errors errors) {
-        Person person = (Person) target;
+        PersonDto personDto = (PersonDto) target;
         try{
-            personDetailsService.loadUserByUsername(person.getEmail());
+            personDetailsService.loadUserByUsername(personDto.getEmail());
         } catch (UsernameNotFoundException ignored){
             return; // все ок
         }

@@ -7,7 +7,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @EnableWebSecurity
@@ -17,14 +16,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public SecurityConfig(PersonDetailsService personDetailsService) {
         this.personDetailsService = personDetailsService;
     }
+
     @Override
-    protected void configure(HttpSecurity http) throws Exception{
+    protected void configure(HttpSecurity http) throws Exception {
         // конфиг сам Spring Security
         // конфиг авторизацию
         http
 //                .csrf().disable()// отключаем защиту от межсайтовой подделки запросов
                 .authorizeRequests()
-                .antMatchers("/index","/error", "/registration", "/css/**").permitAll() // пускаем пользователя на эту страницу - авториз
+                .antMatchers("/index", "/error", "/registration", "/css/**").permitAll() // пускаем пользователя на эту страницу - авториз
 //                .anyRequest().authenticated() // не пускаем не аунтентифицированного пользователя на другие страницы - авториз
                 .anyRequest().hasAnyRole("USER")
                 .and() // далее настраивается страница index
@@ -39,7 +39,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/index");
 
 
-
     }
 
     // натсраивает аутентификацию
@@ -49,7 +48,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public PasswordEncoder getPasswordEncoder(){
+    public PasswordEncoder getPasswordEncoder() {
         return new BCryptPasswordEncoder();
     }
 }
