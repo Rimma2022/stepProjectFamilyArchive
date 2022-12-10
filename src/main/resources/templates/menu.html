@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://thymeaLeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+    <link rel="stylesheet" href="..static/css/body.css" th:href="@{/css/bodyMenu.css}">
+    <link rel="stylesheet" href="..static/css/form.css" th:href="@{/css/formMenu.css}">
+
+</head>
+<body th:object="${child}">
+
+
+<div class="login-page">
+    <div class="form">
+        <form class="register-form" th:method="post">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+            <button type="submit" th:formaction="@{/childShow/(id=${child.getId()})}">Информация о ребенке</button>
+            <button type="submit" th:formaction="@{/IllnessShow/(id=${child.getId()})}">Заболевания</button>
+            <button type="submit" th:formaction="@{/Illness/(id=${child.getId()})}">Внести заболевание</button>
+            <button type="submit" th:formaction="@{/EventShow/(id=${child.getId()})}">Важные события</button>
+            <button type="submit" th:formaction="@{/events/(id=${child.getId()})}">Внести важное событиe</button>
+        </form>
+        <form class="register-form" th:action="@{/logout}" th:method="post">
+            <button id="lastButton" type="submit" th:formaction="@{/logout}">Выход</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

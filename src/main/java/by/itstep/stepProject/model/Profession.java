@@ -3,20 +3,18 @@ package by.itstep.stepProject.model;
 import lombok.*;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@MappedSuperclass
-public class BaseEntityEvent {
+@Entity
+public class Profession {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    @Column(name = "nameEvent")
+    @Column(name = "name")
     private String name;
-    @Column(name = "dataEvent")
-    private LocalDate date;
+
 }

@@ -1,11 +1,41 @@
 package by.itstep.stepProject.model;
 
 
-import javax.persistence.Entity;
-@Entity
-public class Child extends Person{
-//    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    @JoinColumn(name = "childId", foreignKey = @ForeignKey(name = "childId"))
-//    private Person person;
+import lombok.*;
 
+
+import javax.persistence.*;
+import java.time.LocalDate;
+import java.util.List;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Builder
+public class Child {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+    @OneToMany
+    private List<Illness> illnessesList;
+    @OneToMany
+    private List<Event> eventsList;
+    @OneToMany
+    private List<Person> relativeList;
+    @Column(name = "name")
+    private String name;
+    @Column(name = "middleName")
+    private String middleName;
+    @Column(name = "surname")
+    private String surname;
+    @Column(name = "email")
+    private String email;
+    @Column(name = "dateBirth")
+    private LocalDate dateBirth;
+    @Column(name = "gender")
+    private String gender;
+    @OneToOne
+    private Person mainParent;
 }
